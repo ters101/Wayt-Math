@@ -30,7 +30,7 @@
 		<link
 			rel="stylesheet"
 			href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/base16/dracula.min.css" />
-		<title>FreeGPT</title>
+		<title>Wayt Digital Nexus</title>
 	</head>
 
 	<body data-urlprefix="{{ url_prefix}}">
@@ -39,16 +39,16 @@
 				<div class="top">
 					<button class="button" onclick="new_conversation()">
 						<i class="fa-regular fa-plus"></i>
-						<span>{{_('New Conversation')}}</span>
+						<span>{{_('New Math Question')}}</span>
 					</button>
 					<div class="spinner"></div>
 				</div>
 				<div class="sidebar-footer">
 					<button class="button" onclick="delete_conversations()">
 						<i class="fa-regular fa-trash"></i>
-						<span>{{_('Clear Conversations')}}</span>
+						<span>{{_('Clear History')}}</span>
 					</button>
-					<div class="settings-container">
+					<div class="settings-container" style="display: none;">
 						<div class="checkbox field">
 							<span>{{_('Dark Mode')}}</span>
 							<input type="checkbox" id="theme-toggler" />
@@ -62,10 +62,7 @@
 								onchange="changeLanguage(this.value)"></select>
 						</div>
 					</div>
-					<a class="info" href="https://github.com/ramonvc/gptfree-jailbreak-webui" target="_blank">
-						<i class="fa-brands fa-github"></i>
-						<span class="conversation-title"> {{_('Version')}}: 0.1.0 </span>
-					</a>
+					
 				</div>
 			</div>
 			<div class="conversation">
@@ -92,22 +89,22 @@
 					<div class="options-container">
 						<div class="buttons">
 							<div class="field">
-								<select class="dropdown" name="model" id="model">
-									<option value="gpt-3.5-turbo">GPT-3.5</option>
+								<select class="dropdown" name="model" id="model" disabled>
+									<option value="gpt-3.5-turbo" selected>WDN Math</option>
 									<option value="gpt-3.5-turbo-16k">GPT-3.5-turbo-16k</option>
-									<option value="gpt-4" selected>GPT-4</option>
+									<option value="gpt-4">GPT-4</option>
 								</select>
 							</div>
 							<div class="field">
-								<select class="dropdown" name="jailbreak" id="jailbreak">
-									<option value="default" selected>{{_('Default')}}</option>
-									<option value="gpt-dan-11.0">{{_('DAN')}}</option>
+								<select class="dropdown" name="jailbreak" id="jailbreak" disabled>
+									<option value="default">{{_('Default')}}</option>
+									<option value="gpt-dan-11.0" selected>{{_('Default')}}</option>
 									<option value="gpt-evil">{{_('Evil')}}</option>
 								</select>
 							</div>
 						</div>
 						<div class="field checkbox">
-							<input type="checkbox" id="switch" />
+							<input type="checkbox" id="switch" disabled/>
 							<label for="switch"></label>
 							<span>{{_('Web Access')}}</span>
 						</div>
